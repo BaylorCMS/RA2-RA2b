@@ -21,11 +21,11 @@ EventYield_TauHad(string sample="TTbar_", bool mc=false){
   TH1D * preHist;
 
   if(sample.find("stack")==string::npos)sprintf(tempname,"TauHad/GenInfo_HadTauEstimation_%s.root",sample.c_str());
-  else sprintf(tempname,"TauHad/Stack/GenInfo_HadTauEstimation_%s.root",sample.c_str()); 
+  else sprintf(tempname,"TauHad/Stack/ARElog47_GenInfo_HadTauEstimation_%s.root",sample.c_str()); 
   TFile * exp_f = new TFile(tempname,"R");
   std::cout << tempname << std::endl;
   if(sample.find("stack")==string::npos)sprintf(tempname,"TauHad2/HadTauEstimation_%s.root",sample.c_str());
-  else sprintf(tempname,"TauHad2/Stack/HadTauEstimation_%s.root",sample.c_str());
+  else sprintf(tempname,"TauHad2/Stack/ARElog47_HadTauEstimation_%s.root",sample.c_str());
   TFile * pre_f = new TFile(tempname,"R");
   std::cout << tempname << std::endl;
 
@@ -73,8 +73,9 @@ EventYield_TauHad(string sample="TTbar_", bool mc=false){
     cutname[4]="mht_200";cutname[5]="isoMu";cutname[6]="isoElec";cutname[7]="isoPion";
     cutname[8]="delphi";
 */
-    cutname[0]="mht_200";cutname[1]="isoPion";cutname[2]="delphi";cutname[3]="low_Dphi";cutname[4]="mht_500";cutname[5]="J46_HT5001200_MHT500750";
-    //cutname[0]="delphi";
+  //cutname[0]="mht_200";cutname[1]="isoPion";cutname[2]="delphi";cutname[3]="delphi_Only2Jet";cutname[4]="isotrk_Only2Jet";cutname[5]="mht_Only2Jet";
+  cutname[0]="mht_200";cutname[1]="isoPion";cutname[2]="delphi";
+    //cutname[3]="low_Dphi";cutname[4]="mht_500";cutname[5]="J46_HT5001200_MHT500750";
 
 
   double exp=0,pre=0;
